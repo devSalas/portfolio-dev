@@ -1,0 +1,46 @@
+---
+export const prerender = true;
+
+---
+
+
+<header class=" text-white flex justify-between">
+    
+    <div class="relative z-20 text-xl">Estebandev</div>
+
+    <!-- desktop -->
+    <nav class="hidden sm:block">
+     <ul class="">
+        <li>Home</li>
+        <li>Proyectos</li>
+        <li>Acerca de mi</li>
+        <li>Contactame</li>
+     </ul>
+     <button>View Resume</button>
+    </nav>
+
+    <svg class="btnMenu relative z-20 w-6 h-6 dark:text-white sm:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h14M1 6h14M1 11h7"/>
+    </svg>
+
+    <!-- mobile -->
+    <nav class="menu hidden fixed inset-0 bg-slate-800 flex justify-center items-center flex-col gap-14 z-10 sm:hidden">
+        <ul class="flex flex-col gap-4 w-full">
+           <li class="w-full"><a class="block text-center cursor-pointer hover:text-gray-400" href="/home">Home</a></li>
+           <li class="w-full"><a class="block text-center cursor-pointer" href="/proyecto">Proyectos</a></li>
+           <li class="w-full"><a class="block text-center cursor-pointer" href="#acerca">Acerca de mi</a></li>
+           <li class="w-full"><a class="block text-center cursor-pointer" href="/contactame">Contactame</a></li>
+        </ul>
+        <button class="border-2 px-4 py-2 rounded-md cursor-pointer">View Resume</button>
+    </nav>
+
+
+</header> 
+<script>
+    const $btnMenu =document.querySelector(".btnMenu")
+    const $menu =document.querySelector(".menu")
+    console.log($btnMenu)
+    $btnMenu?.addEventListener("click",()=>{
+        $menu?.classList.toggle("hidden")
+    })
+</script>
